@@ -8,6 +8,7 @@ import authRoutes from './routes/auth.js';
 import tenantRoutes from './routes/tenant.js';
 import userRoutes from './routes/users.js';
 import taskRoutes from './routes/tasks.js';
+import analyticsRoutes from './routes/analytics.js';
 import setupSocket from './config/socket.js';
 
 // Load environment variables
@@ -30,6 +31,7 @@ app.use('/auth', authRoutes);
 app.use('/tenants', tenantRoutes);
 app.use('/users', userRoutes);
 app.use('/tasks', taskRoutes);
+app.use('/analytics', analyticsRoutes);
 
 // Setup Socket.IO
 setupSocket(io);
