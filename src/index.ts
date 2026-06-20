@@ -2,6 +2,7 @@ import express from 'express';
 import cors from 'cors';
 import helmet from 'helmet';
 import { config } from 'dotenv';
+import authRoutes from './routes/auth.js';
 
 // Load environment variables
 config();
@@ -16,6 +17,8 @@ app.use(express.json());
 app.get('/', (req, res) => {
   res.send('Welcome to Delivery Management System');
 });
+
+app.use('/auth', authRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
