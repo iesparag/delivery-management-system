@@ -5,6 +5,7 @@ import { config } from 'dotenv';
 import authRoutes from './routes/auth.js';
 import tenantRoutes from './routes/tenant.js';
 import userRoutes from './routes/users.js';
+import taskRoutes from './routes/tasks.js';
 
 // Load environment variables
 config();
@@ -23,6 +24,7 @@ app.get('/', (req, res) => {
 app.use('/auth', authRoutes);
 app.use('/tenants', tenantRoutes);
 app.use('/users', userRoutes);
+app.use('/tasks', taskRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
