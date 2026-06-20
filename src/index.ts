@@ -3,6 +3,7 @@ import cors from 'cors';
 import helmet from 'helmet';
 import { config } from 'dotenv';
 import authRoutes from './routes/auth.js';
+import tenantRoutes from './routes/tenant.js';
 
 // Load environment variables
 config();
@@ -19,6 +20,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/auth', authRoutes);
+app.use('/tenants', tenantRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
